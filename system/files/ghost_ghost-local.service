@@ -1,0 +1,14 @@
+[Unit]
+Description=Ghost systemd service for blog: ghost-local
+Documentation=https://docs.ghost.org
+
+[Service]
+Type=simple
+WorkingDirectory=/home/le.xuan.duy/www/ghost_blog
+User=999
+Environment="NODE_ENV=production"
+ExecStart=/usr/bin/node /usr/bin/ghost run
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
